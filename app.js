@@ -71,7 +71,6 @@ function logResponseBody(req, res, next) {
 					dao.req = '{}';
 				}
 				req.insertId > 0 ? (dao.id = req.insertId) : delete dao.id;
-				// await qp.run(`insert into activity_log set ? on duplicate key update ?`, [dao, dao]);
 				oldEnd.apply(res, arguments);
 			} catch (err) {
 				oldEnd.apply(res, arguments);
@@ -97,7 +96,7 @@ app.use((req, res, next) => {
 
 app.use(logResponseBody);
 
-require(`./route_paths/0. common`)(app);
+require(`./route_paths/0. check`)(app);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -27,6 +27,5 @@ module.exports = {
 		}
 
 		let msg = `<b>Error Detected!</b>\n\n<b>API URL: </b> ${error_dao.api_path}\n<b>Error ID:</b> ${error_id}\n<b>Message: </b> ${error_dao.error_message}\n`;
-		// telegram.botAlert(msg);
 	},
 };
